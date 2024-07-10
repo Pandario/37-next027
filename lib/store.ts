@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import postsReducer from './features/posts/postsSlice';
+import reversedPostsReducer from './features/posts/reversedPostsSlice';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       posts: postsReducer,
+      reversedPosts: reversedPostsReducer,
     },
   });
 };

@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+/*import { deepEqual } from '../../utils';*/
 
 interface Post {
   userId: number;
@@ -19,12 +20,19 @@ const initialState: PostsState = {
   error: null,
 };
 
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (_, { getState }) => {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
   if (!response.ok) {
     throw new Error('Failed to fetch posts');
   }
   const data = await response.json();
+  const state = getState() as { posts: PostsState };
+
+  // Return the existing data to avoid updating the state
+  /*if (deepEqual(state.posts.posts, data)) {
+    return state.posts.posts;
+  }*/
+
   return data;
 });
 
@@ -38,8 +46,15 @@ const postsSlice = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.posts = action.payload;
+        // Only update state if the new data is different that was part for fetching data in real-time
+        /*if (!deepEqual(state.posts, action.payload)) {
+          state.status = 'succeeded';
+          state.posts = action.payload;
+        } else {
+          state.status = 'idle';
+        }*/
+          state.status = 'succeeded';
+          state.posts = action.payload;
       })
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = 'failed';
