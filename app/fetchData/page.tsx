@@ -63,7 +63,7 @@ function FetchDataContent() {
         <div className="flex flex-col">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-4 flex-grow">
             {currentPosts.map((post) => (
-              <div key={post.id} className="bg-white p-6 overflow-hidden rounded-lg shadow-md mb-6 h-64 max-w-xs mx-auto">
+              <div key={post.id} className="bg-white p-6 overflow-hidden rounded-lg shadow-md mb-6 h-64 w-80 mx-auto">
                 <h3 className="text-xl font-bold mb-2">{truncateText(post.title, 30)}</h3>
                 <p className="text-gray-700 overflow-hidden p-2 ">{truncateText(post.body, 150)}</p>
               </div>

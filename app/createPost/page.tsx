@@ -34,8 +34,8 @@ const CreatePostPage = ({ onPostCreated }: { onPostCreated: () => void }) => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-4">Create Post</h2>
+    <div className="container  w-1/3 mx-auto px-4 py-8">
+      <h2 className="text-2xl font-bold mb-4 text-center">Create Post</h2>
       <div className="mb-8">
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">Title</label>
@@ -52,7 +52,7 @@ const CreatePostPage = ({ onPostCreated }: { onPostCreated: () => void }) => {
             value={body}
             onChange={(e) => setBody(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            rows={4}
+            rows={8}
           />
         </div>
         <button
