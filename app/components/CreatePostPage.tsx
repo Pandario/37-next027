@@ -59,7 +59,7 @@ const CreatePostPage: React.FC<CreatePostPageProps> = ({ onPostCreated }) => {
   };
 
   return (
-    <div className="container w-1/3 mx-auto px-4 py-8">
+    <div className="container lg:w-1/3 mx-auto px-4 py-8">
       <h2 className="text-2xl font-bold mb-4 text-center">Create Post</h2>
       <div className="mb-8">
         <div className="mb-4">
@@ -68,11 +68,11 @@ const CreatePostPage: React.FC<CreatePostPageProps> = ({ onPostCreated }) => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className=" shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">Body</label>
+          <label className="block text-gray-700  text-sm font-bold mb-2">Body</label>
           <textarea
             value={body}
             onChange={(e) => setBody(e.target.value)}
