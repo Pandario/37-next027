@@ -4,7 +4,8 @@ import FetchDataPage from './fetchData/page';
 import FetchData2Page from './fetchData2/page';
 
 import PostsPage from './posts/page';
-import CreatePostPage from './createPost/page';
+import CreatePostPage from './components/CreatePostPage';
+
 
 export default function Home() {
   const [updateKey, setUpdateKey] = useState(0);
