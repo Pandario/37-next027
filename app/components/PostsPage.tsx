@@ -101,6 +101,4 @@ const PostsPage = () => {
   );
 };
 
-export default function Page() {
-  return <PostsPage />;
-}
+export default  PostsPage

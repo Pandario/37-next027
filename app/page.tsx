@@ -1,10 +1,12 @@
 'use client'
 import React, { useState } from 'react';
-import FetchDataPage from './fetchData/page';
-import FetchData2Page from './fetchData2/page';
 
-import PostsPage from './posts/page';
+
+
 import CreatePostPage from './components/CreatePostPage';
+import FetchDataPage from './components/FetchDataPage';
+import FetchData2Page from './components/FetchData2Page';
+import PostsPage from './components/PostsPage';
 
 
 export default function Home() {
